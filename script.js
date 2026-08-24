@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     color: 0x00f2fe,
     wireframe: true,
     transparent: true,
-    opacity: 0.4
+    opacity: 0.35
   });
   const coreMesh = new THREE.Mesh(coreGeometry, coreMaterial);
   scene.add(coreMesh);
@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
     size: 0.6,
     color: 0x00f2fe,
     transparent: true,
-    opacity: 0.6
+    opacity: 0.5
   });
 
   const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
