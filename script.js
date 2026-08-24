@@ -40,7 +40,7 @@ document.getElementById('toggle-theme')?.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
 });
 
-// Canvas 3D de Fundo (Three.js)
+// Canvas 3D de Fundo Colorido (Three.js)
 window.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('webgl-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
@@ -54,18 +54,18 @@ window.addEventListener('DOMContentLoaded', () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   // Geometria Central
-  const coreGeometry = new THREE.IcosahedronGeometry(6, 2);
+  const coreGeometry = new THREE.IcosahedronGeometry(7, 2);
   const coreMaterial = new THREE.MeshBasicMaterial({
-    color: 0x00f2fe,
+    color: 0x9d4edd,
     wireframe: true,
     transparent: true,
-    opacity: 0.35
+    opacity: 0.3
   });
   const coreMesh = new THREE.Mesh(coreGeometry, coreMaterial);
   scene.add(coreMesh);
 
-  // Partículas
-  const particlesCount = 200;
+  // Partículas Coloridas
+  const particlesCount = 250;
   const positions = new Float32Array(particlesCount * 3);
 
   for (let i = 0; i < particlesCount * 3; i++) {
@@ -76,10 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
   particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
   const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.6,
+    size: 0.7,
     color: 0x00f2fe,
     transparent: true,
-    opacity: 0.5
+    opacity: 0.6
   });
 
   const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -92,7 +92,8 @@ window.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
 
-    coreMesh.rotation.y = elapsedTime * 0.15;
+    coreMesh.rotation.y = elapsedTime * 0.12;
+    coreMesh.rotation.x = elapsedTime * 0.08;
     particlesMesh.rotation.y = elapsedTime * 0.03;
 
     renderer.render(scene, camera);

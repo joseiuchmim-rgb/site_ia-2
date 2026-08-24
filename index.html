@@ -8,19 +8,22 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <canvas id="webgl-canvas"></canvas>
-  <div class="bg-glow"></div>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
 
   <!-- Header -->
   <header>
     <div class="header-container">
       <div class="logo">
-        <i class="fa-solid fa-atom logo-icon"></i>
+        <div class="logo-icon-wrapper">
+          <i class="fa-solid fa-atom logo-icon"></i>
+        </div>
         <span>Visconde<span class="highlight">Conecta</span></span>
       </div>
       <nav>
@@ -42,9 +45,9 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
       <div class="hero-content">
-        <span class="badge">Portal de Acolhimento e Ação</span>
-        <h1>ViscondeConecta</h1>
-        <p>Apoio, informação e espaço seguro para os estudantes do Visconde.</p>
+        <span class="badge"><i class="fa-solid fa-sparkles"></i> Portal de Acolhimento e Ação</span>
+        <h1 class="gradient-title">ViscondeConecta</h1>
+        <p>Apoio, informação e espaço seguro com energia positiva para os estudantes do Visconde.</p>
         <div class="hero-buttons">
           <a href="#escuta" class="btn-tech primary"><i class="fa-solid fa-heart"></i> Preciso de Ajuda</a>
           <a href="#flashcards" class="btn-tech secondary"><i class="fa-solid fa-lightbulb"></i> Aprender Mais</a>
@@ -55,25 +58,31 @@
     <!-- Seção de Recursos / Ações Rápidas -->
     <section id="recursos" class="container section-padding">
       <div class="section-header center">
-        <h2 class="section-title"><i class="fa-solid fa-compass"></i> O que você encontra aqui</h2>
+        <h2 class="section-title gradient-text-2"><i class="fa-solid fa-compass"></i> O que você encontra aqui</h2>
         <p class="subtitle">Navegue pelas ferramentas de apoio e conscientização da nossa escola.</p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
-          <i class="fa-solid fa-shield-halved feature-icon"></i>
+        <div class="feature-card color-border-1">
+          <div class="icon-box color-1">
+            <i class="fa-solid fa-shield-halved feature-icon"></i>
+          </div>
           <h3>Combate ao Bullying</h3>
           <p>Informações claras sobre como identificar, combater e denunciar o bullying no ambiente escolar.</p>
         </div>
-        <div class="feature-card">
-          <i class="fa-solid fa-user-lock feature-icon"></i>
+        <div class="feature-card color-border-2">
+          <div class="icon-box color-2">
+            <i class="fa-solid fa-user-lock feature-icon"></i>
+          </div>
           <h3>Escuta 100% Anônima</h3>
           <p>Um canal seguro para desabafar ou relatar situações sem precisar se identificar.</p>
         </div>
-        <div class="feature-card">
-          <i class="fa-solid fa-gamepad feature-icon"></i>
+        <div class="feature-card color-border-3">
+          <div class="icon-box color-3">
+            <i class="fa-solid fa-gamepad feature-icon"></i>
+          </div>
           <h3>Atividades Interativas</h3>
-          <p>Testes de conhecimento e cartões interativos para aprender de forma leve.</p>
+          <p>Testes de conhecimento e cartões interativos para aprender de forma leve e divertida.</p>
         </div>
       </div>
     </section>
@@ -81,8 +90,8 @@
     <!-- Seção: Minigame Flash Cards -->
     <section id="flashcards" class="glass-section section-padding">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Mitos vs. Realidades</h2>
+        <div class="section-header center">
+          <h2 class="section-title gradient-text-1"><i class="fa-solid fa-layer-group"></i> Mitos vs. Realidades</h2>
           <p class="subtitle">Clique nos cartões para virar e descobrir a verdade por trás de frases comuns.</p>
         </div>
         
@@ -149,16 +158,16 @@
     <!-- Seção Quiz -->
     <section id="quiz" class="container section-padding">
       <div class="section-header center">
-        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> Teste Seus Conhecimentos</h2>
+        <h2 class="section-title gradient-text-2"><i class="fa-solid fa-circle-question"></i> Teste Seus Conhecimentos</h2>
         <p class="subtitle">Você sabe como agir ao presenciar uma situação de bullying?</p>
       </div>
 
-      <div class="quiz-box">
+      <div class="quiz-box color-border-3">
         <p class="quiz-question">O que é a melhor atitude ao ver um colega sendo isolado ou zombado no intervalo?</p>
         <div class="quiz-options">
           <button class="quiz-opt" onclick="responderQuiz(this, false)">Rir junto para não virar o próximo alvo</button>
           <button class="quiz-opt" onclick="responderQuiz(this, false)">Fazer de conta que não viu e ir embora</button>
-          <button class="quiz-opt" onclick="responderQuiz(this, true)">Chamar o colega para se juntar ao seu grupo e/or avisar um inspetor/professor</button>
+          <button class="quiz-opt" onclick="responderQuiz(this, true)">Chamar o colega para se juntar ao seu grupo e/ou avisar um inspetor/professor</button>
         </div>
         <div id="quiz-feedback" class="quiz-feedback hidden"></div>
       </div>
@@ -168,11 +177,11 @@
     <section id="escuta" class="glass-section section-padding">
       <div class="container max-width-md">
         <div class="section-header center">
-          <h2 class="section-title"><i class="fa-solid fa-comment-dots"></i> Espaço de Escuta</h2>
+          <h2 class="section-title gradient-text-1"><i class="fa-solid fa-comment-dots"></i> Espaço de Escuta</h2>
           <p class="subtitle">Um canal seguro e anônimo para você desabafar ou relatar algo importante.</p>
         </div>
         
-        <div class="escuta-box">
+        <div class="escuta-box color-border-1">
           <div class="form-group">
             <label for="mensagem-escuta">Sua Mensagem Anônima:</label>
             <textarea id="mensagem-escuta" rows="5" placeholder="Sinta-se à vontade para escrever o que está sentindo ou relatando..."></textarea>
