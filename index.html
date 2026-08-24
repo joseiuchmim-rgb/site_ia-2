@@ -83,7 +83,165 @@
             </article>
 
             <article class="card-tech">
-              <div class="card-icon"><i class="fa-solid fa-venus"></i></div>
+              <div class="card-i<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViscondeConecta 3D</title>
+  
+  <!-- Estilos e Fontes -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome para Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Canvas 3D de Fundo Interativo -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Efeito Glow de Fundo -->
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <i class="fa-solid fa-atom logo-icon"></i>
+        <span>Visconde<span class="highlight">Conecta</span></span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#flashcards">Mitos vs Realidades</a></li>
+          <li><a href="#escuta">Espaço de Escuta</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+        </ul>
+      </nav>
+      <div class="accessibility-tools">
+        <button id="toggle-theme"><i class="fa-solid fa-circle-half-stroke"></i> Tema</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-content">
+        <span class="badge">Portal de Acolhimento e Ação</span>
+        <h1>ViscondeConecta</h1>
+        
+        <!-- Subtítulo Atualizado -->
+        <p>Apoio aos estudantes do Visconde</p>
+        
+        <div class="hero-buttons">
+          <a href="#escuta" class="btn-tech primary"><i class="fa-solid fa-heart"></i> Preciso de Ajuda</a>
+          <a href="#flashcards" class="btn-tech secondary"><i class="fa-solid fa-gamepad"></i> Minigame</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Minigame Flash Cards -->
+    <section id="flashcards" class="container section-padding">
+      <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Mitos vs. Realidades: Bullying</h2>
+      <p class="subtitle">Clique nos cartões para descobrir a verdade por trás de frases comuns sobre o bullying.</p>
+      
+      <div class="flashcards-container">
+        <!-- Card 1 -->
+        <div class="flashcard-wrapper">
+          <div class="flashcard" onclick="virarCartao(this)">
+            <div class="card-front">
+              <span class="card-label mitos">MITO?</span>
+              <p>Bullying é só uma brincadeira de criança, ajuda a fortalecer o caráter.</p>
+            </div>
+            <div class="card-back">
+              <span class="card-label realidade">REALIDADE!</span>
+              <p>O bullying causa sofrimento real, depressão, ansiedade e pode ter consequências graves para a saúde mental por toda a vida.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flashcard-wrapper">
+          <div class="flashcard" onclick="virarCartao(this)">
+            <div class="card-front">
+              <span class="card-label mitos">MITO?</span>
+              <p>Se você ignorar, o bullying para.</p>
+            </div>
+            <div class="card-back">
+              <span class="card-label realidade">REALIDADE!</span>
+              <p>Muitas vezes, ignorar faz com que o agressor continue. É fundamental buscar ajuda de um adulto de confiança ou da escola.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flashcard-wrapper">
+          <div class="flashcard" onclick="virarCartao(this)">
+            <div class="card-front">
+              <span class="card-label mitos">MITO?</span>
+              <p>Bullying só acontece fisicamente (agressões, empurrões).</p>
+            </div>
+            <div class="card-back">
+              <span class="card-label realidade">REALIDADE!</span>
+              <p>O bullying também é verbal (apelidos, insultos), social (exclusão, espalhar rumores) e digital (cyberbullying).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flashcard-wrapper">
+          <div class="flashcard" onclick="virarCartao(this)">
+            <div class="card-front">
+              <span class="card-label mitos">MITO?</span>
+              <p>A vítima de bullying sempre tem culpa de algo.</p>
+            </div>
+            <div class="card-back">
+              <span class="card-label realidade">REALIDADE!</span>
+              <p>Ninguém merece ser maltratado. A responsabilidade é sempre de quem pratica a agressão, nunca da vítima.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Escuta -->
+    <section id="escuta" class="glass-section section-padding">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-comment-dots"></i> Espaço de Escuta</h2>
+        <p class="subtitle">Um canal seguro e anônimo para você desabafar ou relatar algo importante.</p>
+        
+        <div class="escuta-box">
+          <textarea id="mensagem-escuta" rows="5" placeholder="Escreva aqui o que você está sentindo ou o que gostaria de relatar..."></textarea>
+          <button id="btn-enviar-escuta" class="btn-tech primary"><i class="fa-solid fa-paper-plane"></i> Enviar Mensagem</button>
+          
+          <div id="feedback-escuta" class="feedback-card hidden">
+            <i class="fa-solid fa-shield-heart feedback-icon"></i>
+            <h3>Sua mensagem foi enviada com segurança!</h3>
+            <p>Obrigado por se expressar. Lembre-se de que você não está sozinho(a).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; ViscondeConecta - Apoio e Respeito no Ambiente Escolar.</p>
+      <button id="btn-top"><i class="fa-solid fa-arrow-up"></i> Voltar ao topo</button>
+    </div>
+  </footer>
+
+  <!-- Biblioteca Three.js para o Sistema 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>con"><i class="fa-solid fa-venus"></i></div>
               <h3>Violência Contra a Mulher</h3>
               <p>Informação e apoio para erradicar o assédio, violência de gênero e promover a igualdade de direitos.</p>
             </article>
