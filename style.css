@@ -46,12 +46,12 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 
-  /* Imagem de Fundo Escurecida e Colorida */
+  /* Imagem de Fundo da Escola */
   background-image: linear-gradient(
       rgba(11, 15, 25, 0.86), 
       rgba(11, 15, 25, 0.86)
     ), 
-    url('escola.jpg');
+    url('image_181c71.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +63,7 @@ body.light-mode {
       rgba(240, 244, 248, 0.92), 
       rgba(240, 244, 248, 0.92)
     ), 
-    url('escola.jpg');
+    url('image_181c71.jpg');
 }
 
 #webgl-canvas {
